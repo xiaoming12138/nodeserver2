@@ -1,4 +1,4 @@
 {
   "version": 2,
-  "builds": [{ "src": "*/bin/www.js", "use": "@now/node-server" }]
+  "builds": [{ "src": "*/www", "use": "@now/node-server" }]
 }
