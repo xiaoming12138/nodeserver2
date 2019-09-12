@@ -61,9 +61,5 @@ app.get('/api/banner', (req, res) => {
             res1.send(body);
         }
     })
-
-
-
-    res.send(body);
 });
 app.listen();
