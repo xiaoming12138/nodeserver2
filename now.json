@@ -1,4 +1,79 @@
 {
   "version": 2,
-  "builds": [{ "src": "*/index.js", "use": "@now/node-server" }]
+  "alias": ["my-domain.com"],
+  "builds": [
+    {
+      "src": "/routes/index.js",
+      "use": "@now/node-server"
+    },
+    {
+      "src": "/routes/goods.js",
+      "use": "@now/node-server"
+    },
+    {
+      "src": "/routes/activity.js",
+      "use": "@now/node-server"
+    },
+    {
+      "src": "/routes/banner.js",
+      "use": "@now/node-server"
+    },
+    {
+      "src": "/routes/category.js",
+      "use": "@now/node-server"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/",
+      "methods": [
+        "GET"
+      ],
+      "dest": "/routes/index.js"
+    },
+    {
+      "src": "/api/goods",
+      "methods": [
+        "GET"
+      ],
+      "headers": {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "PUT, POST, GET, DELETE, OPTIONS"
+      },
+      "dest": "/routes/goods.js"
+    },
+    {
+      "src": "/api/activity",
+      "methods": [
+        "GET"
+      ],
+      "headers": {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "PUT, POST, GET, DELETE, OPTIONS"
+      },
+      "dest": "/routes/activity.js"
+    },
+    {
+      "src": "/api/banner",
+      "methods": [
+        "GET"
+      ],
+      "headers": {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "PUT, POST, GET, DELETE, OPTIONS"
+      },
+      "dest": "/routes/banner.js"
+    },
+    {
+      "src": "/api/category",
+      "methods": [
+        "GET"
+      ],
+      "headers": {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "PUT, POST, GET, DELETE, OPTIONS"
+      },
+      "dest": "/routes/category.js"
+    }
+  ]
 }
